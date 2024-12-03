@@ -79,7 +79,6 @@ project-root/
 
    const __dirname = dirname(fileURLToPath(import.meta.url));
    app.use(express.static("public"));
-   app.use(express.static("public"));
 
    app.set("view engine", "ejs");
 
