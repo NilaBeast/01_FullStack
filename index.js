@@ -5,14 +5,15 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/views/index.html')
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/login.html')
+    res.sendFile(__dirname + '/views/login.html')
 });
 
 app.post('/login', (req , res) => {
